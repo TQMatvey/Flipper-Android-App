@@ -18,6 +18,7 @@ private const val FIRMWARE_COMMIT = "devinfo_firmware.commit.hash"
 private const val FIRMWARE_BRANCH = "devinfo_firmware.branch.name"
 private const val FIRMWARE_BUILD_DATE = "devinfo_firmware.build.date"
 private const val FIRMWARE_TARGET = "devinfo_firmware.target"
+private const val FIRMWARE_VERSION = "devinfo_firmware.version"
 private const val PROTOBUF_MAJOR = "devinfo_protobuf.version.major"
 private const val PROTOBUF_MINOR = "devinfo_protobuf.version.minor"
 private const val DEVICE_INFO_MAJOR = "devinfo_format.major"
@@ -53,10 +54,9 @@ internal class NewFlipperRpcInfoMapper : FlipperRpcInfoMapper {
             serialNumber = fields[SERIAL_NUMBER]
         )
 
-        val firmwareCommit = fields[FIRMWARE_COMMIT]
-        val firmwareBranch = fields[FIRMWARE_BRANCH]
+        val firmwareVersion = fields[FIRMWARE_VERSION]
         val softwareRevision =
-            RpcInformationInfoHelper.softwareRevision(firmwareCommit, firmwareBranch)
+            RpcInformationInfoHelper.softwareRevision(firmwareVersion)
 
         val protobufMajor = fields[PROTOBUF_MAJOR]
         val protobufMinor = fields[PROTOBUF_MINOR]

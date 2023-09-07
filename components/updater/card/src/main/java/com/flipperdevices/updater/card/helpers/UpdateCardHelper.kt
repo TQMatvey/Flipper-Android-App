@@ -42,7 +42,7 @@ class UpdateCardHelper(
             .getOrNull()
             ?.get(updateChannel) ?: return processNoUpdate()
 
-        val isUpdateAvailable = alwaysShowUpdate ||
+        val isUpdateAvailable =
             latestVersionFromNetwork.version.isGreaterThan(firmwareVersion) ?: true ||
             updateChannel == FirmwareChannel.UNKNOWN
         if (isUpdateAvailable) return processUpdateAvailable(latestVersionFromNetwork)

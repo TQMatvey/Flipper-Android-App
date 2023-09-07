@@ -7,10 +7,9 @@ import com.flipperdevices.core.ktx.jre.titlecaseFirstCharIfItIsLowercase
 
 object RpcInformationInfoHelper {
     // softwareRevision Branch.Commit
-    fun softwareRevision(firmwareCommit: String?, firmwareBranch: String?): String? {
-        return if (isNotNull(firmwareCommit, firmwareBranch)) {
-            val firmwareBranchCapitalize = firmwareBranch?.titlecaseFirstCharIfItIsLowercase()
-            "$firmwareBranchCapitalize $firmwareCommit"
+    fun softwareRevision(firmwareVersion: String?): String? {
+        return if (isNotNull(firmwareVersion)) {
+            "$firmwareVersion"
         } else {
             null
         }

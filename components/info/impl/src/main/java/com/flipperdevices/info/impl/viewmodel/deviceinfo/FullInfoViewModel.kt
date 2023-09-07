@@ -85,11 +85,11 @@ class FullInfoViewModel @VMInject constructor(
         }
     }
 
-    fun getFirmwareChannel(commit: String?): FirmwareChannel? {
-        if (commit == null) return null
-        val preparedCommit = commit.split(" ")
-        if (preparedCommit.isEmpty()) return null
-        val branch = preparedCommit.first()
-        return firmwareVersionBuilderApi.getFirmwareChannel(branch)
+    fun getFirmwareChannel(fullVersion: String?): FirmwareChannel? {
+        if (fullVersion == null) return null
+        val preparedVersion = fullVersion.split(" ")
+        if (preparedVersion.isEmpty()) return null
+        val version = preparedVersion.first()
+        return firmwareVersionBuilderApi.getFirmwareChannel(version)
     }
 }
