@@ -3,7 +3,7 @@ package com.flipperdevices.buildlogic
 import org.gradle.api.Project
 
 object ApkConfig {
-    const val APPLICATION_ID = "com.flipperdevices.app"
+    const val APPLICATION_ID = "com.unleashedflip.app"
 
     const val MIN_SDK_VERSION = 26
     const val TARGET_SDK_VERSION = 33
